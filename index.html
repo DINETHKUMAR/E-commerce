@@ -1,42 +1,50 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <title>
-      E-commerce
-    </title>
-    
+    <title>E-commerce</title>
+    <script src="script.js"></script>
   </head>
   <body>
-    <button onclick="console.log(`Cart Quantity: ${cartQuantity}`)">Show Quantity</button>
-    <button onclick="cartQuantity++;
-    console.log(`Cart Quantity: ${cartQuantity}`)">
-    Add to cart</button>
-    <button onclick="cartQuantity+=2;
-    console.log(`Cart Quantity: ${cartQuantity}`)">+2</button>
-    <button onclick="cartQuantity+=3;
-    console.log(`Cart Quantity: ${cartQuantity}`)">+3</button>
-    <button onclick="cartQuantity=0;
-    console.log(`Cart Quantity: ${cartQuantity}`)">Reset</button>
+    <button onclick="
+      console.log(`Cart quantity: ${cartQuantity}`);
+    ">Show Quantity</button>
 
-    <!--Tried and learn that this is DOM
-    <button onclick="if (cartQuantity=>2) {
-      cartQuantity-=2;
-      console.log(`Cart Quantity: ${cartQuantity}`)
-    }">-2</button>  #not possible within ""
-    -->
     <button onclick="
-      cartQuantity--;
-      console.log(`Cart Quantity: ${cartQuantity}`)
+      updateCartQuantity(1);
+    ">Add to Cart</button>
+
+    <button onclick="
+      updateCartQuantity(2);
+    ">+2</button>
+
+    <button onclick="
+      updateCartQuantity(3);
+    ">+3</button>
+
+    <button onclick="
+      updateCartQuantity(4);
+    ">+4</button>
+
+    <button onclick="
+      updateCartQuantity(5);
+    ">+5</button>
+
+    <button onclick="
+      updateCartQuantity(-1);
     ">Remove from cart</button>
+
     <button onclick="
-      cartQuantity-=2;
-      console.log(`Cart Quantity: ${cartQuantity}`)
+      updateCartQuantity(-2);
     ">-2</button>
+
     <button onclick="
-      cartQuantity-=3;
-      console.log(`Cart Quantity: ${cartQuantity}`)
-  ">-3</button>
-    <script>
-      let cartQuantity =0;
-    </script>
+      updateCartQuantity(-3);
+    ">-3</button>
+
+    <button onclick="
+      cartQuantity = 0;
+      console.log('Cart was reset.');
+      console.log(`Cart quantity: ${cartQuantity}`);
+    ">Reset Cart</button>
   </body>
 </html>

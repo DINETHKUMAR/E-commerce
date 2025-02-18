@@ -1,5 +1,5 @@
-let cartQuantity = 0;
-
+let cartQuantity =Number(localStorage.getItem('cartQuantity'))|| 0;
+showcart();
   function updateCartQuantity(change) {
     if (cartQuantity + change > 10) {
       alert('The cart is full');
@@ -12,5 +12,19 @@ let cartQuantity = 0;
     }
 
     cartQuantity += change;
+   
+    localStorage.setItem('cartQuantity',String(cartQuantity));
+    showcart();
     console.log(`Cart quantity: ${cartQuantity}`);
+  }
+  function showcart(){
+    document.querySelector('.js-cart')
+    .innerHTML = `Cart quantity: ${cartQuantity}`;
+  }
+  function reset(){
+    cartQuantity = 0;
+    localStorage.removeItem('cartQuantity');
+    document.querySelector('.js-cart')
+      .innerHTML = `Cart quantity: ${cartQuantity}`;
+      console.log(`Cart quantity: ${cartQuantity}`);
   }

@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>E-commerce</title>
-    <script src="script.js"></script>
+    
   </head>
   <body>
     <button onclick="
@@ -42,9 +42,10 @@
     ">-3</button>
 
     <button onclick="
-      cartQuantity = 0;
-      console.log('Cart was reset.');
-      console.log(`Cart quantity: ${cartQuantity}`);
+      reset();
     ">Reset Cart</button>
+    <p class="js-cart"></p>
+
+    <script src="script.js"></script>
   </body>
 </html>
